@@ -1,4 +1,6 @@
 require "ar_to_ar/version"
+require "fileutils"
+
 
 module ArToAr
   class ActiveRecordToApplicationRecord
@@ -17,9 +19,15 @@ module ArToAr
         new_content = get_new_content model_name
         replace_content file_name, matched_line, new_content
       end
+
+      copy_application_record_template
     end
 
     private
+
+    def copy_application_record_template
+      FileUtils.cp "#{File.expand_path(File.dirname(__FILE__))}/lib/ar_to_ar/application_record_template.rb", "#{@current_path}/app_models/application_record.rb"
+    end
 
     #this method finds the line in app/models/*.rb which matches
     #class ModelName < ActiveRecord::Base
