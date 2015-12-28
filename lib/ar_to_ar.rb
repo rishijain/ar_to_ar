@@ -26,7 +26,7 @@ module ArToAr
     private
 
     def copy_application_record_template
-      FileUtils.cp "#{File.expand_path(File.dirname(__FILE__))}/lib/ar_to_ar/application_record_template.rb", "#{@current_path}/app_models/application_record.rb"
+      FileUtils.cp "#{File.expand_path(File.dirname(__FILE__))}/ar_to_ar/application_record_template.rb", "#{@current_path}/app/models/application_record.rb"
     end
 
     #this method finds the line in app/models/*.rb which matches
