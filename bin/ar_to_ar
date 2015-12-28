@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'ar_to_ar'
+
+conversion = ArToAr::ActiveRecordToApplicationRecord.new
+conversion.start!
