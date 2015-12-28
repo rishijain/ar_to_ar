@@ -25,10 +25,6 @@ module ArToAr
 
     private
 
-    def copy_application_record_template
-      FileUtils.cp "#{File.expand_path(File.dirname(__FILE__))}/ar_to_ar/application_record_template.rb", "#{@current_path}/app/models/application_record.rb"
-    end
-
     #this method finds the line in app/models/*.rb which matches
     #class ModelName < ActiveRecord::Base
     def find_matched_line(file_path)
@@ -54,6 +50,10 @@ module ArToAr
       file_text = File.read file_path
       sub_content = file_text.gsub old_content, new_content
       File.open(file_path, "w") {|file| file.puts sub_content}
+    end
+
+    def copy_application_record_template
+      FileUtils.cp "#{File.expand_path(File.dirname(__FILE__))}/ar_to_ar/application_record_template.rb", "#{@current_path}/app/models/application_record.rb"
     end
   end
 end
