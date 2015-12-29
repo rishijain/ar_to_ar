@@ -1,8 +1,6 @@
 # ArToAr
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ar_to_ar`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+One of the notable changes in Rails 5 is that models now inherit from ApplicationRecord instead of ActiveRecord::Base. So this gem helps you avoid the manual labour of changing each and every model in your rails project. Instead just use the command line tool available through this gem.
 
 ## Installation
 
@@ -22,15 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run this command on the terminal at the root of your Rails project.
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+ar_to_ar
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ar_to_ar.
+Bug reports and pull requests are welcome on GitHub at https://github.com/rishijain/ar_to_ar.
 
