@@ -5,8 +5,8 @@ require "fileutils"
 module ArToAr
   class ActiveRecordToApplicationRecord
 
-    def initialize
-      @current_path = Dir.pwd
+    def initialize look_up_path=nil
+      @current_path = look_up_path || Dir.pwd
       @all_file_names = Dir["#{@current_path}/app/models/*.rb"]
     end
 
