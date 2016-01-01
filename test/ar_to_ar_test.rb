@@ -26,10 +26,19 @@ class ArToArTest < Minitest::Test
     revert_files
   end
 
+  def test_if_activerecord_is_replaced_with_applicationrecord__nested_directory
+    line = File.open("#{Dir.pwd}/test/fixtures/app/models/engine/user.rb", "r++") do |file|
+      file.find { |line| line.match /(class(.+)<\s*ApplicationRecord)/ }
+    end
+    assert line, "class User < ApplicationRecord\n"
+    revert_files
+  end
+
   private
 
   def revert_files
     FileUtils.cp "#{Dir.pwd}/test/fixtures/backups/user.rb", "#{Dir.pwd}/test/fixtures/app/models/user.rb"
+    FileUtils.cp "#{Dir.pwd}/test/fixtures/backups/engine/user.rb", "#{Dir.pwd}/test/fixtures/app/models/engine/user.rb"
     File.delete "#{Dir.pwd}/test/fixtures/app/models/application_record.rb"
   end
 
