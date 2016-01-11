@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/rishijain/ar_to_ar.svg?branch=master)](https://travis-ci.org/rishijain/ar_to_ar)
+[![Gem Version](https://badge.fury.io/rb/ar_to_ar.svg)](https://badge.fury.io/rb/ar_to_ar)
+
 # ArToAr
 
 One of the notable changes in Rails 5 is that models now inherit from ApplicationRecord instead of ActiveRecord::Base. So this gem helps you avoid the manual labour of changing each and every model in your rails project. Instead just use the command line tool available through this gem.
