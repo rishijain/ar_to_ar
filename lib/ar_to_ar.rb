@@ -29,7 +29,7 @@ module ArToAr
     #class ModelName < ActiveRecord::Base
     def find_matched_line(file_path)
       File.open(file_path, "r++") do |file|
-        return file.find { |line| line.match /(class(.+)<\s*ActiveRecord::Base)/ }
+        return file.find { |line| line.force_encoding('UTF-8').match /(class(.+)<\s*ActiveRecord::Base)/ }
       end
     end
 
